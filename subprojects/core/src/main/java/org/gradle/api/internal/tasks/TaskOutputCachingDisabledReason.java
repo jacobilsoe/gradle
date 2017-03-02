@@ -14,26 +14,9 @@
  * limitations under the License.
  */
 
-package org.gradle.api.internal;
+package org.gradle.api.internal.tasks;
 
-import org.gradle.api.Nullable;
-import org.gradle.api.internal.tasks.TaskOutputCachingDisabledReason;
-
-public interface TaskOutputCachingState {
-    /**
-     * Check if caching is enabled for the task outputs.
-     */
-    boolean isEnabled();
-
-    /**
-     * Returns a description why caching is not enabled for the task.
-     */
-    @Nullable
-    String getDisabledReason();
-
-    /**
-     * Returns the reason why caching is not enabled for the task.
-     */
-    @Nullable
-    TaskOutputCachingDisabledReason getReason();
+public interface TaskOutputCachingDisabledReason {
+    TaskOutputCachingDisabledReasonCategory getCategory();
+    String getDescription();
 }
